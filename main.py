@@ -34,13 +34,6 @@ def generate():
     img = ImageTk.PhotoImage(image)
     lmain.configure(image=img) 
     
-def generate(): 
-    with autocast(device): 
-        image = pipe(prompt.get(), guidance_scale=8.5)["sample"][0]
-    
-    image.save('generatedimage.png')
-    img = ImageTk.PhotoImage(image)
-    lmain.configure(image=img)
 
 trigger = ctk.CTkButton(height=40, width=120, text_font=("Arial", 20), text_color="white", fg_color="blue", command=generate) 
 trigger.configure(text="Generate") 
