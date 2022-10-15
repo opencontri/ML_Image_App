@@ -1,7 +1,8 @@
+#Importing Libraries!
+
 import tkinter as tk
 import customtkinter as ctk 
 
-#added already:
 from PIL import ImageTk
 from authtoken import auth_token
 
@@ -10,7 +11,7 @@ from torch import autocast
 from diffusers import StableDiffusionPipeline
 
 
-# Creating the app
+# Application Creation!
 app = tk.Tk()
 app.geometry("532x632")
 app.title("Stable Bud") 
@@ -27,6 +28,7 @@ device = "cuda"
 pipe = StableDiffusionPipeline.from_pretrained(modelid, revision="fp16", torch_dtype=torch.float16, use_auth_token=auth_token)
 pipe.to(device) 
 
+#Function Creation:
 def generate(): 
     with autocast(device): 
         image = pipe(prompt.get(), guidance_scale=8.5)["sample"][0]
@@ -41,3 +43,5 @@ trigger.configure(text="Generate")
 trigger.place(x=206, y=60) 
 
 app.mainloop()
+
+#End of Program
