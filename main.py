@@ -6,6 +6,7 @@ from authtoken import auth_token
 
 import torch
 from torch import autocast
+from diffusers import StableDiffusionPipeline
 
 
 # Creating the app
@@ -22,6 +23,7 @@ lmain.place(x=10, y=110)
 
 modelid = "CompVis/stable-diffusion-v1-4"
 device = "cuda"
+pipe = StableDiffusionPipeline.from_pretrained(modelid, revision="fp16", torch_dtype=torch.float16, use_auth_token=auth_token)
 pipe.to(device) 
 
 def generate(): 
