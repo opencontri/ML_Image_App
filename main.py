@@ -33,6 +33,7 @@ def generate():
     image.save('generatedimage.png')
     img = ImageTk.PhotoImage(image)
     lmain.configure(image=img) 
+    
 
 trigger = ctk.CTkButton(height=40, width=120, text_font=("Arial", 20), text_color="white", fg_color="blue", command=generate) 
 trigger.configure(text="Generate") 
