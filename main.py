@@ -2,6 +2,7 @@ import tkinter as tk
 import customtkinter as ctk 
 
 from PIL import ImageTk
+#already imported the authtoken file!
 from authtoken import auth_token
 
 import torch
@@ -15,7 +16,10 @@ app.geometry("532x632")
 app.title("Stable Bud") 
 ctk.set_appearance_mode("dark") 
 
+
 prompt = ctk.CTkEntry(height=40, width=512, text_font=("Arial", 20), text_color="blue", fg_color="white") 
+prompt = ctk.CTkEntry(height=40, width=512, text_font=("Calibri", 40), text_color="black", fg_color="white") 
+
 prompt.place(x=10, y=10)
 
 lmain = ctk.CTkLabel(height=512, width=512)
@@ -35,7 +39,10 @@ def generate():
     lmain.configure(image=img) 
     
 
+
 trigger = ctk.CTkButton(height=40, width=120, text_font=("Arial", 20), text_color="blue", fg_color="black", command=generate) 
+trigger = ctk.CTkButton(height=40, width=120, text_font=("Calibri", 40), text_color="white", fg_color="blue", command=generate) 
+
 trigger.configure(text="Generate") 
 trigger.place(x=206, y=60) 
 
