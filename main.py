@@ -2,6 +2,7 @@ import tkinter as tk
 import customtkinter as ctk 
 
 from PIL import ImageTk
+#already imported the authtoken file!
 from authtoken import auth_token
 
 import torch
